@@ -1,0 +1,159 @@
+body {
+	background-color: #f4f4f4;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+    font-family: Arial, sans-serif; 
+    margin: 0;
+    min-height: 100vh;
+}
+
+.main {
+    display: flex;
+    max-width: 900px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.left-panel {
+    width: 330px;
+    display: flex;
+    flex-direction: column;
+    height: 1150px;
+    align-items: center;
+	padding: 20px;
+	border-right: 2px solid #ddd;
+}
+
+.photo-panel {
+ 	width: 100%;
+	border-radius: 10px;
+}
+
+.text-content {
+    padding: 20px;
+    flex-grow: 1;
+    background-color: #f9f9f9;
+    overflow-y: auto;
+}
+
+.text-content h1{
+	font-size: 25px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.text-content h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.nccu-icon {
+    width: 50px;
+    height: auto;
+    display: block;
+    margin-top: auto;
+}
+
+.right-panel {
+    width: 540px;
+    padding: 20px;
+    background-color: #fafafa;
+}
+
+.education-section {
+    margin-bottom: 30px;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.year {
+    font-weight: bold;
+    width: 100px;
+}
+
+.timeline-item p {
+    margin-left: 20px;
+}
+
+.homework-list-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.homework-list-section li {
+    margin-bottom: 10px;
+}
+
+.homework-list a {
+    text-decoration: none;
+    color: #337ab7;
+}
+
+.homework-list a:hover {
+    color: #0056b3;
+}
+
+.favorite-music-section{
+    margin-bottom: 20px;
+    text-align: center;
+}
+.music-section h2{
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+}
+.music{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.music-item{
+    flex: 0 1 calc(25% - 20px);
+    text-align: center;
+    max-width: 150px;
+}
+.music-item img{
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+.music-item p{
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+    line-height: 1.4;
+}
+.music-item a{
+    text-decoration: none;
+    color: #007BFF;
+}
+.music-item a:hover p{
+    color: #0056b3;
+}
+
+.music-note {
+    font-size: 0.9em;
+    color: #666;
+    font-style: italic;
+}

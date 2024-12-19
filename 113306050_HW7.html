@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>113306050_HW5</title>
+    <link rel="stylesheet" href="113306050_HW7.css">
+</head>
+<body>
+    <div class="main">
+        <div class="left-panel">
+            <div class="photo-panel">
+            	<img src="red.jpg">
+            </div>
+            <div class="text-content">
+            	<h1 id="display-name">Rex</h1>
+                <button id="edit-button">edit</button>
+                <h2>About Me</h2>
+                <p>I am freshman in MIS in the NCCU</p>
+                <h3>Contact Info:</h3>
+                <p><a href="mailto:113306050@g.nccu.edu.tw">113306050.g.nccu.edu.tw</a></p>
+                <p>0910-136-127</p>
+                <img src="NCCU.jpg" alt="NCCU Icon" class="nccu-icon">
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="education-section">
+                <h2>Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="year">2023</span>
+                        <p>studying at CGSH</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">2024</span>
+                        <p>Started to studying at NCCU</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="homework-list-section">
+                <h2>Homework List</h2>
+                <ul>
+                    <li><a href="https://github.com/rexshih-226/HW1.git">HW1</a></li>
+					<li><a href="https://github.com/rexshih-226/HW2.git">HW2</a></li>
+					<li><a href="https://github.com/rexshih-226/HW3.git">HW3</a></li>
+					<li><a href="https://github.com/rexshih-226/Lab1.git">Lab_1108</a></li>
+                </ul>
+            </div>
+
+            <div class="favorite-music-section">
+                <h2>Favorite Music</h2>
+                <div class="music" id="music-list">
+                    <div class="music-item">
+                       <a href="https://www.youtube.com/watch?v=FonjL7DQAUQ" target="blank">
+					   <img src="youtube.jpg" width="55.0" height="55.0" alt="Not found">
+					   <p>海浪</p>
+					   </a>
+				    </div>
+				    <div class="music-item">
+                        <a href="https://www.youtube.com/watch?v=9eoRMHQ2dyA" target="blank">
+				    	<img src="youtube.jpg" width="55.0" height="55.0" alt="Not found">
+				    	<p>你給過我的快樂</p>
+					   </a>
+				    </div>
+				    <div class="music-item">
+					   <a href="https://www.youtube.com/watch?v=9WEYFqCUze8" target="blank">
+					   <img src="youtube.jpg" width="55.0" height="55.0" alt="Not found">
+					   <p>紅</p>
+					   </a>
+				    </div>
+                </div>
+                <button id="add-music-button">Add Music</button>
+                </div>
+                <p class="music-note">These songs are part of my daily playlist.</p>
+            	</div>
+    	</div>
+    </div>
+
+    <script type="text/javascript">
+        const displayName = document.getElementById('display-name');
+        const editButton = document.getElementById('edit-button');
+
+        editButton.addEventListener('click', () => {
+            if (editButton.textContent === 'edit') {
+                const inputField = document.createElement('input');
+                inputField.type = 'text';
+                inputField.id = 'name-input';
+                inputField.value = displayName.textContent;
+                displayName.replaceWith(inputField);
+                editButton.textContent = 'save';
+            } else {
+                const inputField = document.getElementById('name-input');
+                const newName = inputField.value.trim();
+                    if (newName) {
+                        displayName.textContent = newName;
+                    }
+                inputField.replaceWith(displayName);
+                editButton.textContent = 'edit';
+            }
+        });
+
+        const addMusicButton = document.getElementById('add-music-button');
+        const musicList = document.getElementById('music-list');
+
+
+        addMusicButton.addEventListener('click', () => {
+        const musicForm = document.createElement('div');
+        musicForm.id = 'music-form';
+        musicForm.innerHTML = `
+            <input type="text" id="music-link" placeholder="Music Link" required>
+            <input type="text" id="music-name" placeholder="Music Name" required>
+            <button id="submit-music-button">Submit</button>`;
+        document.querySelector('.favorite-music-section').appendChild(musicForm);
+
+    
+        const submitMusicButton = document.getElementById('submit-music-button');
+        submitMusicButton.addEventListener('click', () => {
+            const musicLink = document.getElementById('music-link').value.trim();
+            const musicName = document.getElementById('music-name').value.trim();
+
+            if (musicLink && musicName) {
+                const newMusicItem = document.createElement('div');
+                newMusicItem.className = 'music-item';
+                newMusicItem.innerHTML = `<a href="${musicLink}" target="_blank"><img src="youtube.png" alt="${musicName}"><p>${musicName}</p></a>`;
+                musicList.appendChild(newMusicItem);
+                musicForm.remove();
+            } else {
+                alert('Please fill in both fields!');
+            }
+        });
+    });
+    </script>
+</body>
+</html>
